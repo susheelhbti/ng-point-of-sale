@@ -1,0 +1,70 @@
+<div class="header">
+  Elstore
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-9">
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="menu-container">
+            <div class="menu-item">
+              <!-- for category of items -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          
+          <div class="items-container">
+            <div class="controls container">
+              <div class="row justify-content-between">
+                <div class="col-lg-3 col-md-6 col-sm-12 ">
+                  <button class="btn w-100 mb-2" (click)="addItem()">
+                    Add Item
+                    <fa-icon [icon]="icon.faPlusCircle"></fa-icon>
+                  </button>
+                </div>
+  
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                  <div class="input-group">
+                    <input #search type="text" class="form-control" placeholder="Search Item">
+                    <div class="input-group-append">
+                      <button class="btn search-btn input-group-text" (click)="searchItem(search.value)">
+                        <fa-icon [icon]="icon.faSearch"></fa-icon>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="items">
+                <app-item *ngFor="let item of items; let index = i" [item]="item" (click)="addToOrder(item)"></app-item>
+              </div>
+
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="order-actions">
+        <button class="cancel-btn" (click)="cancelOrder()">Cancel Order
+          <fa-icon [icon]="icon.faTimesCircle"></fa-icon>
+        </button>
+      </div>
+
+    </div>
+    <div class="col-lg-3">
+      <div class="checkout-container">
+        <app-checkout [orders]="orders"></app-checkout>
+      </div>
+      <button class="proceed-btn" (click)="checkOutOrder()">Checkout
+        <fa-icon [icon]="icon.faCheckCircle"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>

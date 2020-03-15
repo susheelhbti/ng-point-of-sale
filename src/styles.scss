@@ -1,0 +1,166 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/variables.scss";
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-color: #fff1c8 !important;
+}
+
+#toast-container > div {
+  opacity:1;
+}
+
+.header {
+  background-color: $firebase-yellow;
+  height: 5vh;
+  text-align: center;
+  color: white;
+  font-family: "Pacifico", cursive;
+  font-size: 28px;
+  text-shadow: 2px 2px 5px rgb(133, 133, 133);
+}
+
+.container-fluid {
+  background-color: #fff1c8;
+}
+
+.menu-container,
+.items-container,
+.checkout-container {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.menu-container {
+  height: 16vh;
+  margin: 2vh 0;
+}
+
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 65vh;
+  margin: 2vh 0;
+  padding: 20px;
+
+  .controls {
+    span {
+      color: $firebase-yellow;
+    }
+
+    button {
+      background-color: $firebase-yellow;
+    }
+  }
+}
+
+.checkout-container {
+  height: 85vh;
+  margin: 2vh 0;
+
+  h5 {
+    text-align: center;
+    padding: 8px;
+    margin: unset;
+  }
+  hr {
+    margin: unset;
+  }
+
+  .order-table {
+    height: 70vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    table {
+      thead {
+        th {
+          width: 65%;
+        }
+      }
+      tbody {
+        td {
+          width: 35%;
+          text-align: left;
+        }
+      }
+    }
+  }
+  .total-price {
+    height: 11vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+    p {
+      font-weight: bold;
+    }
+  }
+}
+
+.proceed-btn {
+  background: $color-success;
+  border: none;
+  border-radius: 0.25rem;
+  color: #fff;
+  padding: 8px 20px;
+  width: 100%;
+}
+
+.order-actions {
+  float: right !important;
+
+  button {
+    background: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 0.25rem;
+  }
+
+  .cancel-btn {
+    border: 1px solid $color-danger;
+    color: $color-danger;
+  }
+}
+
+.items {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  cursor: pointer;
+  height: 55vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+
+  .item {
+    flex: 1;
+    .item-img {
+      height: 140px;
+      width: 140px;
+      border: 1px solid #f3f3f3;
+      box-shadow: 2px 1px 10px 0px #d8d8d8;
+      .fa-image {
+        color: $firebase-yellow;
+        font-size: 8.7rem;
+        padding: 1.6rem;
+      }
+    }
+    .item-name,
+    .item-price {
+      margin: 0;
+      width: 140px;
+    }
+
+    .item-price {
+      font-weight: 600;
+      color: $firebase-yellow;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.card {
+  margin: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  .card-body {
+    padding: 26% 0;
+  }
+}
